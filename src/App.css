@@ -1,3 +1,61 @@
 .App {
-  text-align: center;
+  text-align: start;
+  
+}
+
+.Header {
+  color: white;
+  font-style: bold;
+  font-family: inherit;
+  background: linear-gradient(90deg, #7efbf7, #3891d1, #020107);
+  box-shadow: 5px 5px 5px #020107;
+}
+.Greeting {
+  display: inline;
+  color: #276a9a;
+  font-style: bold;
+  font-family: inherit;
+  margin: 1rem;
+ 
+}
+
+.ItemList {
+  height: auto;
+  width: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+}
+
+.IndividualArticles {
+  height: 4%;
+  width: 4%;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.Thumbnails {
+  height: 130px;
+  width: 130px;
+  padding: px;
+  margin: 1rem;
+  box-shadow: 5px 5px 5px #3891d1;
+}
+
+.IdividualArticles {
+  text-overflow: ellipsis;
+  font-size: 65%;
+  margin-bottom: 0;
+  margin-top: 0;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.Prices {
+  font-size: 85%;
+  margin-top: 0;
+}
+
+body {
+  background-color: rgb(182, 206, 227);
 }
