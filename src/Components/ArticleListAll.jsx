@@ -1,25 +1,32 @@
 import { fetchArticles } from '../api.js'
 import { useEffect } from "react";
 import ArticleCard from "./ArticleCard";
+import { useState } from 'react';
 
 const ArticleListAll = ({ articles, setArticles }) => {
+
+  const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
+    setIsLoading(true);
     fetchArticles().then((getArticles) => {
       setArticles(getArticles);
+      setIsLoading(false);
     });
   }, []);
+
+  if (isLoading) {
+    return <p className="Loading">Loading Articles...</p>
+  }
+
 
   return (
     <div className="ArticleListAll">
       {articles.map((article) => {
         return (
           <ArticleCard
-            article_id={article.article_id}
             title={article.title}
-            topic={article.topic}
             author={article.author}
-            body={article.body}
-            created_at={article.created_at}
             article_img_url={article.article_img_url}
           />
         );

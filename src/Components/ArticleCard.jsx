@@ -12,11 +12,12 @@ const ArticleCard = ({
 }) => {
   return (
     <div className="IdividualArticles">
+      <h2 className="Title">{title}</h2>
+      <p className="Author">{author}</p>
       <Link to={`/articles/${article_id}`}>
         <img className="Thumbnails" src={article_img_url} />
       </Link>
-      <h2 className="Title">{title}</h2>
-      <p className="Author">{author}</p>
+     
     </div>
   );
 };

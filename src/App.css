@@ -1,6 +1,14 @@
 .App {
   text-align: start;
-  
+}
+
+.Loading{
+  font-size: 50px;
+  text-align: center;
+  color: #276a9a;
+  font-style: bold;
+  font-family: inherit;
+  margin: 1rem;
 }
 
 .Header {
@@ -10,6 +18,7 @@
   background: linear-gradient(90deg, #7efbf7, #3891d1, #020107);
   box-shadow: 5px 5px 5px #020107;
 }
+
 .Greeting {
   display: inline;
   color: #276a9a;
@@ -19,7 +28,7 @@
  
 }
 
-.ItemList {
+.AtricleListAll {
   height: auto;
   width: auto;
   display: flex;
@@ -34,21 +43,16 @@
   margin: 1rem;
 }
 
-.Thumbnails {
-  height: 130px;
-  width: 130px;
-  padding: px;
-  margin: 1rem;
-  box-shadow: 5px 5px 5px #3891d1;
+.Title{
+  font-size: 20px
 }
 
-.IdividualArticles {
-  text-overflow: ellipsis;
-  font-size: 65%;
-  margin-bottom: 0;
-  margin-top: 0;
-  margin-left: 5px;
-  margin-right: 5px;
+.Thumbnails {
+  float: left;
+  height: 80px;
+  width: 130px;
+  margin: 10px;
+  box-shadow: 5px 5px 5px #3891d1;
 }
 
 .Prices {

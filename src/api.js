@@ -1,9 +1,15 @@
 import axios from "axios";
 
+const newsAPI = axios.create({
+  baseURL:"https://lilybackendncnews.onrender.com/api"
+})
+
 export const fetchArticles = () => {
-  return axios
-    .get("https://lilybackendncnews.onrender.com/api/articles")
-    .then((response) => {
-      return response.data.articles;
-    });
+
+  return newsAPI.get("/articles").then((response) => {
+
+    return response.data.articles;
+
+  });
+
 };
