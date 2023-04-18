@@ -2,6 +2,10 @@
   text-align: start;
 }
 
+body {
+  background-color: rgb(182, 206, 227);
+}
+
 .Loading{
   font-size: 50px;
   text-align: center;
@@ -14,6 +18,7 @@
 .Header {
   color: white;
   font-style: bold;
+  font-size: 70px;
   font-family: inherit;
   background: linear-gradient(90deg, #7efbf7, #3891d1, #020107);
   box-shadow: 5px 5px 5px #020107;
@@ -24,42 +29,100 @@
   color: #276a9a;
   font-style: bold;
   font-family: inherit;
-  margin: 1rem;
+  margin-top: ;
  
 }
-
-.AtricleListAll {
-  height: auto;
-  width: auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: start;
+.Welcome{
+  margin-top: -40px;
 }
 
-.IndividualArticles {
-  height: 4%;
-  width: 4%;
-  padding: 1rem;
-  margin: 1rem;
-}
-
-.Title{
-  font-size: 20px
-}
-
-.Thumbnails {
-  float: left;
+.Avatar {
+  float: right;
+  object-fit: scale-down;
+  width: 50px;
+  justify-content: center;
+  margin-top: -45px;
+  margin-right: 120px;
+  /* float: left;
   height: 80px;
   width: 130px;
-  margin: 10px;
+  margin: 10px; */
+  box-shadow: 5px 5px 5px #3891d1;
+  /* border-radius: 1000; */
+}
+
+.UserName {
+  font-style: italic;
+  margin-top: -20px;
+  color:#7d9aaf
+}
+/* -----------------------ArticleList-----------------------------
+ */
+.AtricleListAll {
+
+  
+}
+
+.ArticleCard {
+  
+
+}
+
+.ArticleCardTitle{
+  margin-bottom: -30px;
+  margin-top: 40px;
+}
+
+.ArticleCardAuthor {
+  margin-bottom: 0px;
+  margin-top: 30px;
+  font-style: italic;
+}
+
+.ArticleCardThumbnails {
+  object-fit: scale-down;
+  width: 370px;
+  justify-content: center;
+  margin: 2px;
+  /* float: left;
+  height: 80px;
+  width: 130px;
+  margin: 10px; */
   box-shadow: 5px 5px 5px #3891d1;
 }
 
-.Prices {
-  font-size: 85%;
-  margin-top: 0;
+/* ----------------------------SingleArticlePage------------------------ */
+
+.SingleArticlePage {
+object-fit: contain;
 }
 
-body {
-  background-color: rgb(182, 206, 227);
+.SingleArticlePageTitle {
+  margin-top: -25px;
 }
+
+.CreatedAt {
+  margin-top: -15px;
+  color:rgb(85, 95, 104)
+}
+
+.SingleArticlePageAuthor {
+  margin-top: -15px;
+}
+
+.SingleArticlePageImg {
+  width: 370px;
+  justify-content: center;
+  margin: 2px;
+  object-fit: scale-down;
+}
+
+.SingleArticlePageBody {
+font-size:larger
+}
+
+.WriteACommentButton {
+
+  
+}
+

@@ -1,7 +1,9 @@
-import { fetchArticles } from '../api.js'
+import { fetchArticles } from '../Utils.js/api.js'
 import { useEffect } from "react";
 import ArticleCard from "./ArticleCard";
 import { useState } from 'react';
+import Greeting from './Greeting';
+
 
 const ArticleListAll = ({ articles, setArticles }) => {
 
@@ -9,8 +11,8 @@ const ArticleListAll = ({ articles, setArticles }) => {
 
   useEffect(() => {
     setIsLoading(true);
-    fetchArticles().then((getArticles) => {
-      setArticles(getArticles);
+    fetchArticles().then(( getArticles ) => {
+      setArticles( getArticles );
       setIsLoading(false);
     });
   }, []);
@@ -21,13 +23,12 @@ const ArticleListAll = ({ articles, setArticles }) => {
 
 
   return (
+
     <div className="ArticleListAll">
-      {articles.map((article) => {
+      <Greeting/>
+      { articles.map(( article ) => {
         return (
-          <ArticleCard
-            title={article.title}
-            author={article.author}
-            article_img_url={article.article_img_url}
+          <ArticleCard article={ article }
           />
         );
       })}
