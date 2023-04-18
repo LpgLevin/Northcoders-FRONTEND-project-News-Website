@@ -1,3 +1,65 @@
 .App {
+  text-align: start;
+}
+
+.Loading{
+  font-size: 50px;
   text-align: center;
+  color: #276a9a;
+  font-style: bold;
+  font-family: inherit;
+  margin: 1rem;
+}
+
+.Header {
+  color: white;
+  font-style: bold;
+  font-family: inherit;
+  background: linear-gradient(90deg, #7efbf7, #3891d1, #020107);
+  box-shadow: 5px 5px 5px #020107;
+}
+
+.Greeting {
+  display: inline;
+  color: #276a9a;
+  font-style: bold;
+  font-family: inherit;
+  margin: 1rem;
+ 
+}
+
+.AtricleListAll {
+  height: auto;
+  width: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+}
+
+.IndividualArticles {
+  height: 4%;
+  width: 4%;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.Title{
+  font-size: 20px
+}
+
+.Thumbnails {
+  float: left;
+  height: 80px;
+  width: 130px;
+  margin: 10px;
+  box-shadow: 5px 5px 5px #3891d1;
+}
+
+.Prices {
+  font-size: 85%;
+  margin-top: 0;
+}
+
+body {
+  background-color: rgb(182, 206, 227);
 }
