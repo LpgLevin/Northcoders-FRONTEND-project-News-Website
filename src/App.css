@@ -2,6 +2,10 @@
   text-align: start;
 }
 
+body {
+  background-color: rgb(182, 206, 227);
+}
+
 .Loading{
   font-size: 50px;
   text-align: center;
@@ -55,11 +59,34 @@
   box-shadow: 5px 5px 5px #3891d1;
 }
 
-.Prices {
-  font-size: 85%;
-  margin-top: 0;
+/* ----------------------------SingleArticlePage------------------------ */
+
+.SingleArticlePage {
+
 }
 
-body {
-  background-color: rgb(182, 206, 227);
+.SingleArticlePageTitle {
+
 }
+
+.SingleArticlePageAuthor {
+
+}
+
+.CreatedAt {
+
+}
+
+.SingleArticlePageImg {
+
+}
+
+.SingleArticlePageBody {
+
+}
+
+.WriteACommentButton {
+
+  
+}
+

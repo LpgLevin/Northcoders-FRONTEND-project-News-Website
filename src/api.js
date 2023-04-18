@@ -13,3 +13,17 @@ export const fetchArticles = () => {
   });
 
 };
+
+
+
+export const fetchSingleArticle = ( article_id ) => {
+
+  return newsAPI.get(`/articles/${ article_id }`).then((response) => {
+
+    console.log("Hello");
+
+    return response.data;
+
+  });
+
+};
