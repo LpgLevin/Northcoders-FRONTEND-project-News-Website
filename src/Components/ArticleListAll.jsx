@@ -1,4 +1,4 @@
-import { fetchArticles } from '../api.js'
+import { fetchArticles } from '../Utils.js/api.js'
 import { useEffect } from "react";
 import ArticleCard from "./ArticleCard";
 import { useState } from 'react';
