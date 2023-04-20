@@ -157,8 +157,17 @@ body {
   font-size: larger;
 }
 
-.WriteACommentButton {
+.VoteButton {
+height: 30px;
+width: 30px;
+border-radius: 25% 10%;
+box-shadow: 5px 5px 5px #151620;
+background-color:#491040;
+color:#fdef96;
+font-size: 20px;
+}
 
+.VoteButtonLabel {
   
 }
 
@@ -172,6 +181,7 @@ body {
   border-radius: 25% 10%;
   padding: 10px;
   margin: 10px;
+
  }
 
  /* ----------------CommentCardBrokenDown-------------------- */

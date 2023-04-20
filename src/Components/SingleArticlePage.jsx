@@ -1,9 +1,11 @@
 
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { fetchSingleArticle } from "../Utils.js/api";
+import { fetchSingleArticle, patchVotes } from "../Utils.js/api";
 import { useParams } from 'react-router-dom';
 import CommentGroup from "./CommentGroup";
+import PostACommentForm from "./PostACommentForm";
+
 
 
 const SingleArticlePage = () => {
@@ -13,6 +15,9 @@ const SingleArticlePage = () => {
 
     const [singleArticle, setSingleArticle] = useState();
     const [isLoading, setIsLoading] = useState(true);
+    const [updatedVotes, setUpdatedVotes] = useState(0);
+    const [errorMessage, setErrorMessage] = useState('');
+
 
     useEffect(() => {
         setIsLoading(true);
@@ -21,6 +26,32 @@ const SingleArticlePage = () => {
           setIsLoading( false );
         });
     }, []);
+
+function incrementVotes() {
+   
+    setUpdatedVotes(( currentVotes ) => { 
+
+        return currentVotes +1;
+
+    });
+
+    patchVotes( article_id )
+    .catch( () => { 
+        setErrorMessage('Your vote will not be counted because you are offline!') 
+        setUpdatedVotes(( currentVotes ) => { 
+
+            return currentVotes -1;
+    
+        });
+    } );
+
+};
+
+function goToPostACommentPage() {
+
+    return <PostACommentForm/>
+
+}
 
     return ( 
         <div>
@@ -34,7 +65,13 @@ const SingleArticlePage = () => {
                 <img className="SingleArticlePageImg" src={ singleArticle.article_img_url } />
                 </Link>
                 <p className="SingleArticlePageBody">{ singleArticle.body }</p>
-                {/* make button and render it here with ternary for rendering the below */}
+                <h5 className="Votes"> Votes: { singleArticle.votes + updatedVotes }</h5>
+
+                <label className="VoteButtonLabel" for="VoteButton"><button onClick={ goToPostACommentPage }className="VoteButton" id="VoteButton">+</button>Comment on this article</label>
+                { CommentErrorMessage && <p>{ CommentErrorMessage }</p> }
+
+                <label className="VoteButtonLabel" for="VoteButton">Vote for this article: <button onClick={ incrementVotes }className="VoteButton" id="VoteButton">+</button></label>
+                { errorMessage && <p>{ errorMessage }</p> }
                 <h5 className="CommentsHeader">Comments...</h5>
                 <CommentGroup article_id={ article_id } />
                 </div>
