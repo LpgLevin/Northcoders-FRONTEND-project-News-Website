@@ -24,15 +24,17 @@ const ArticleListAll = ({ articles, setArticles }) => {
 
   return (
 
-    <div className="ArticleListAll">
-      <Greeting/>
-      { articles.map(( article ) => {
-        return (
-          <ArticleCard article={ article }
-          />
-        );
-      })}
-    </div>
+    <body>
+      <div className="ArticleListAll">
+        <Greeting/>
+        { articles.map(( article ) => {
+          return (
+            <ArticleCard article={ article }
+            />
+          );
+        })}
+      </div>
+    </body>
   );
 };
 
