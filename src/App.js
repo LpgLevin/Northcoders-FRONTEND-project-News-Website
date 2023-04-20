@@ -14,11 +14,10 @@ function App() {
   const [searchTopic, setSearchTopic] = useState("");
   const [pageState, setPageState] = useState(0);
 
-  // if (pageState === 0) {
-
     return (
       
       <div className="App">
+    
         <Header/>
         
         <Routes>
@@ -30,15 +29,6 @@ function App() {
       </div>
     );
 
-  // }
-
-  // if (pageState === 1) {
-
-  //   <div className="App">
-  //       <Header/>
-  //       <SingleArticlePage/>
-  //     </div>
-  // };
 
 }
 
