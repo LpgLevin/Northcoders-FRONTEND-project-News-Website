@@ -1,101 +1,133 @@
-.App {
-  text-align: start;
-}
 
 body {
-  background-color: rgb(182, 206, 227);
+  background-color: #fdef96;
+}
+.App {
+  display: grid;
 }
 
 .Loading{
   font-size: 50px;
   text-align: center;
-  color: #276a9a;
+  color: #871F78;
   font-style: bold;
-  font-family: inherit;
   margin: 1rem;
 }
 
+/* -----------------------MainHeader-----------------------------
+ */
+
 .Header {
-  color: white;
-  font-style: bold;
-  font-size: 70px;
-  font-family: inherit;
-  background: linear-gradient(90deg, #7efbf7, #3891d1, #020107);
-  box-shadow: 5px 5px 5px #020107;
+  color: #fdef96;
+  font-weight:400;
+  background: linear-gradient(90deg, #E9EFF3, #491040);
+  margin: 10px;
+  font-size: 3rem;
+  margin-top: 10px;
+  text-align: right; 
+  background-color: #8896A9;
+  box-shadow: 5px 5px 5px #151620;
+  border-radius: 30% 0%;
+  padding: 10px;
+  margin-bottom: 50px;
 }
+
+/* -----------------------Greeting-----------------------------
+ */
 
 .Greeting {
-  display: inline;
-  color: #276a9a;
+  display: grid;
+  color: #6B7AB9;
   font-style: bold;
-  font-family: inherit;
-  margin-top: ;
- 
-}
-.Welcome{
-  margin-top: -40px;
+  /* grid-template-columns: repeat(7, 1fr); */
+  grid-template: 
+  "welcome Avatar" 30px
+  "UserName Avatar" 30px / 5fr 2fr;
+  gap: 5px;
+  padding: 10px;
+  margin-top: -20px;
+  margin-right: -50px;
 }
 
-.Avatar {
-  float: right;
-  object-fit: scale-down;
-  width: 50px;
-  justify-content: center;
-  margin-top: -45px;
-  margin-right: 120px;
-  /* float: left;
-  height: 80px;
-  width: 130px;
-  margin: 10px; */
-  box-shadow: 5px 5px 5px #3891d1;
-  /* border-radius: 1000; */
+/* -----------------------GreetingBrokenDown-----------------------------
+ */
+
+.Welcome {
+  grid-area: welcome;
+  text-align: right;
+  margin-top: -3px;
+  
 }
 
 .UserName {
+  grid-area: UserName;
   font-style: italic;
-  margin-top: -20px;
-  color:#7d9aaf
+  color:#8896A9;
+  font-size: small;
+  text-align: right;
+  margin-top: -3px;
+
+
 }
+
+.Avatar {
+  grid-area: Avatar;
+  height: 100%;
+  box-shadow: 5px 5px 5px #151620;
+  border-radius: 5px
+}
+
+
 /* -----------------------ArticleList-----------------------------
  */
 .AtricleListAll {
-
-  
+  display: grid;
+  align-content: center;
 }
+
+/* -----------------------ArticleCard-----------------------------
+ */
 
 .ArticleCard {
-  
-
+  display: grid;
+  color: #151620;
+  margin: 2px;
+  width: 100%;
 }
 
+/* -----------------------ArticleCardBrokenDown-----------------------------
+ */
+
 .ArticleCardTitle{
+  text-align: justify;
+  overflow-wrap: break-word;
   margin-bottom: -30px;
-  margin-top: 40px;
+  margin-top: 20px;
+  padding: 5px;
 }
 
 .ArticleCardAuthor {
   margin-bottom: 0px;
   margin-top: 30px;
   font-style: italic;
+  font-size: 15px;
+  color:#75677A;
 }
 
 .ArticleCardThumbnails {
-  object-fit: scale-down;
-  width: 370px;
-  justify-content: center;
+  width: 100%;
   margin: 2px;
-  /* float: left;
-  height: 80px;
-  width: 130px;
-  margin: 10px; */
-  box-shadow: 5px 5px 5px #3891d1;
+  box-shadow: 5px 5px 5px #151620;
 }
 
 /* ----------------------------SingleArticlePage------------------------ */
 
 .SingleArticlePage {
-object-fit: contain;
+  object-fit: contain;
+  color: #151620;
 }
+
+/* ----------------------------SingleArticlePageBrokenDown------------------------ */
 
 .SingleArticlePageTitle {
   margin-top: -25px;
@@ -103,11 +135,12 @@ object-fit: contain;
 
 .CreatedAt {
   margin-top: -15px;
-  color:rgb(85, 95, 104)
+  color:#75677A
 }
 
 .SingleArticlePageAuthor {
   margin-top: -15px;
+  color:#75677A
 }
 
 .SingleArticlePageImg {
@@ -115,10 +148,13 @@ object-fit: contain;
   justify-content: center;
   margin: 2px;
   object-fit: scale-down;
+  box-shadow: 5px 5px 5px #151620;
+  /* border-radius: 25% 10%; */
+
 }
 
 .SingleArticlePageBody {
-font-size:larger
+  font-size: larger;
 }
 
 .WriteACommentButton {
@@ -126,3 +162,57 @@ font-size:larger
   
 }
 
+/* --------------------------CommentCard--------------------------
+ */
+
+ .CommentCard {
+  color: #151620;
+  background-color: #8896A9;
+  box-shadow: 5px 5px 5px #151620;
+  border-radius: 25% 10%;
+  padding: 10px;
+  margin: 10px;
+ }
+
+ /* ----------------CommentCardBrokenDown-------------------- */
+
+ .CommentCardAuthor {
+
+ }
+
+ .CommentCardVotes {
+
+ }
+
+ .CommentCardBody {
+
+ }
+
+ .CommentCardCreatedAt {
+  color: #fdef96;
+
+ }
+
+ /* ------------------------CommentGroup-------------------------- 
+ 
+*/
+.CommentsHeader{
+  font-size: 30px;
+  color:#491040;
+  padding: 10px;
+  margin-bottom: -10px;
+  margin-top: -3px;
+}
+.CommentGroup {
+
+
+}
+
+.ColorSchemeOne{
+  color: #E9EFF3;
+  color: #8896A9;
+  color: #6B7AB9;
+  color: #75677A;
+  color: #151620;
+
+}

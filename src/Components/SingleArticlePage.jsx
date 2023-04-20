@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { fetchSingleArticle } from "../Utils.js/api";
 import { useParams } from 'react-router-dom';
+import CommentGroup from "./CommentGroup";
 
 
 const SingleArticlePage = () => {
@@ -23,6 +24,7 @@ const SingleArticlePage = () => {
 
     return ( 
         <div>
+            
             { isLoading ? (<p>Loading Article...</p>) : (      
                 <div>
                 <h2 className="SingleArticlePageTitle">{ singleArticle.title } </h2>
@@ -32,11 +34,16 @@ const SingleArticlePage = () => {
                 <img className="SingleArticlePageImg" src={ singleArticle.article_img_url } />
                 </Link>
                 <p className="SingleArticlePageBody">{ singleArticle.body }</p>
+                {/* make button and render it here with ternary for rendering the below */}
+                <h5 className="CommentsHeader">Comments...</h5>
+                <CommentGroup article_id={ article_id } />
                 </div>
             )};
 
         </div>
     )};
+
+
 
 export default SingleArticlePage;
 

@@ -25,3 +25,15 @@ export const fetchSingleArticle = ( article_id ) => {
   });
 
 };
+
+
+
+export const fetchCommentsById = (article_id) => {
+
+  return newsAPI.get(`/articles/${ article_id }/comments`).then((response) => {
+  
+    return response.data.commentArray;
+
+  });
+
+};
