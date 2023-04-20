@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { fetchSingleArticle, patchVotes } from "../Utils.js/api";
 import { useParams } from 'react-router-dom';
 import CommentGroup from "./CommentGroup";
+import PostACommentForm from "./PostACommentForm";
 
 
 
@@ -46,6 +47,12 @@ function incrementVotes() {
 
 };
 
+function goToPostACommentPage() {
+
+    return <PostACommentForm/>
+
+}
+
     return ( 
         <div>
             
@@ -59,6 +66,10 @@ function incrementVotes() {
                 </Link>
                 <p className="SingleArticlePageBody">{ singleArticle.body }</p>
                 <h5 className="Votes"> Votes: { singleArticle.votes + updatedVotes }</h5>
+
+                <label className="VoteButtonLabel" for="VoteButton"><button onClick={ goToPostACommentPage }className="VoteButton" id="VoteButton">+</button>Comment on this article</label>
+                { CommentErrorMessage && <p>{ CommentErrorMessage }</p> }
+
                 <label className="VoteButtonLabel" for="VoteButton">Vote for this article: <button onClick={ incrementVotes }className="VoteButton" id="VoteButton">+</button></label>
                 { errorMessage && <p>{ errorMessage }</p> }
                 <h5 className="CommentsHeader">Comments...</h5>
