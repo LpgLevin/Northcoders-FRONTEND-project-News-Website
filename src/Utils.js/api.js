@@ -37,3 +37,15 @@ export const fetchCommentsById = (article_id) => {
   });
 
 };
+
+export const patchVotes = ( article_id ) => {
+
+  return newsAPI.patch(`/articles/${ article_id }`, { inc_votes: 1 }).then((response) => {
+  
+    console.log(response.data);
+
+    return response.data;
+
+  });
+
+}
