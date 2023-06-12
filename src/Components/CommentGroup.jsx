@@ -1,13 +1,13 @@
 import { fetchCommentsById } from "../Utils.js/api";
 import { useEffect } from "react";
-import CommentCard from "./CommentCard"; //didnt auto-complete
+import CommentCard from "./CommentCard"; 
 import { useState } from 'react';
 
 
-const CommentGroup = ({ article_id }) => {
+const CommentGroup = ({ article_id, comments, setComments }) => {
 
-    const [comments, setComments] = useState();
     const [isLoading, setIsLoading] = useState(true);
+
     useEffect(() => {
 
         setIsLoading(true);
@@ -43,15 +43,13 @@ const CommentGroup = ({ article_id }) => {
             })};
         
         </div>
+
     );
 
 };
 
 export default CommentGroup;
 
-//fix return dot notation in fetchCommentsById in api
-
-//pass down article id - this doesn't seem to have worked
 
 
 

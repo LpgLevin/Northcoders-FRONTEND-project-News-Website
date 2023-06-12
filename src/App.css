@@ -78,6 +78,34 @@ body {
 }
 
 
+/* -------------------------SearchBar------------------------------ */
+
+.SearchBar {
+  display: grid;
+}
+
+/* -------------------------SearchBarBrokenDown------------------------------ */
+
+.SelectASearchTopic{
+
+
+}
+
+.TopicDropDown{
+
+
+}
+
+.DropDownList{
+
+
+}
+
+.SubmitSearchTopic{
+
+
+}
+
 /* -----------------------ArticleList-----------------------------
  */
 .AtricleListAll {
@@ -157,10 +185,21 @@ body {
   font-size: larger;
 }
 
+.VoteAndCommentButtonsGrid, .PostCommentGrid{
+  display:grid;
+  gap: 15px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+button {
+font: inherit;
+}
+
 .VoteButton {
 height: 30px;
 width: 30px;
-border-radius: 25% 10%;
+border-radius: 25% 0%;
 box-shadow: 5px 5px 5px #151620;
 background-color:#491040;
 color:#fdef96;
@@ -171,6 +210,41 @@ font-size: 20px;
   
 }
 
+.CommentButton {
+  height: 50px;
+  width: 350px;
+  color:#fdef96;
+  font-size: 20px;
+  background-color: #8896A9;
+  box-shadow: 5px 5px 5px #151620;
+  border-radius: 30% 0%;
+  padding: 10px;
+  margin: 10px;
+}
+
+.PostButtonLabel {
+  
+}
+
+.CommentInput{
+  width: 100%;
+  /* height: ; */
+  padding: 10px
+}
+
+.PostButton {
+  height: 50px;
+  width: 350px;
+  color:#fdef96;
+  font-size: 20px;
+  background-color: #8896A9;
+  box-shadow: 5px 5px 5px #151620;
+  border-radius: 30% 0%;
+  padding: 10px;
+  margin: 10px;
+
+}
+
 /* --------------------------CommentCard--------------------------
  */
 
@@ -178,7 +252,7 @@ font-size: 20px;
   color: #151620;
   background-color: #8896A9;
   box-shadow: 5px 5px 5px #151620;
-  border-radius: 25% 10%;
+  border-radius: 25% 0%;
   padding: 10px;
   margin: 10px;
 
