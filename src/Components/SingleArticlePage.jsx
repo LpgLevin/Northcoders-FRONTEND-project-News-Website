@@ -17,6 +17,8 @@ const SingleArticlePage = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [updatedVotes, setUpdatedVotes] = useState(0);
     const [errorMessage, setErrorMessage] = useState('');
+    const [comments, setComments] = useState();
+
 
 
     useEffect(() => {
@@ -43,52 +45,44 @@ function incrementVotes() {
             return currentVotes -1;
     
         });
-    } );
+    });
 
 };
 
-function goToPostACommentPage() {
-
-    return <PostACommentForm/>
-
-}
 
     return ( 
         <div>
             
             { isLoading ? (<p>Loading Article...</p>) : (      
                 <div>
-                <h2 className="SingleArticlePageTitle">{ singleArticle.title } </h2>
-                <h4 className="CreatedAt">{ singleArticle.created_at }</h4>
-                <Link to={ `/articles/${ singleArticle.article_id }` }>
-                <h3 className="SingleArticlePageAuthor">{ singleArticle.author }</h3>
-                <img className="SingleArticlePageImg" src={ singleArticle.article_img_url } />
-                </Link>
-                <p className="SingleArticlePageBody">{ singleArticle.body }</p>
-                <h5 className="Votes"> Votes: { singleArticle.votes + updatedVotes }</h5>
+                    <h2 className="SingleArticlePageTitle">{ singleArticle.title } </h2>
+                    <h4 className="CreatedAt">{ singleArticle.created_at }</h4>
+                    <Link to={ `/articles/${ singleArticle.article_id }` }>
+                    <h3 className="SingleArticlePageAuthor">{ singleArticle.author }</h3>
+                    <img className="SingleArticlePageImg" src={ singleArticle.article_img_url } />
+                    </Link>
+                    <p className="SingleArticlePageBody">{ singleArticle.body }</p>
+                    <h5 className="Votes"> Votes: { singleArticle.votes + updatedVotes }</h5>  
 
-                <label className="VoteButtonLabel" for="VoteButton"><button onClick={ goToPostACommentPage }className="VoteButton" id="VoteButton">+</button>Comment on this article</label>
-                { CommentErrorMessage && <p>{ CommentErrorMessage }</p> }
+                    <section className="VoteAndCommentButtonsGrid">
+                        <label className="VoteButtonLabel" for="VoteButton">Vote for this article: <button onClick={ incrementVotes }className="VoteButton" id="VoteButton">+</button></label>
+                        { errorMessage && <p>{ errorMessage }</p> }
+                        <PostACommentForm comments={ comments } setComments={ setComments } article_id={ article_id }/>
+                    </section>            
 
-                <label className="VoteButtonLabel" for="VoteButton">Vote for this article: <button onClick={ incrementVotes }className="VoteButton" id="VoteButton">+</button></label>
-                { errorMessage && <p>{ errorMessage }</p> }
-                <h5 className="CommentsHeader">Comments...</h5>
-                <CommentGroup article_id={ article_id } />
+                    <h5 className="CommentsHeader">Comments...</h5>
+                    <CommentGroup article_id={ article_id } comments={ comments } setComments={ setComments }/>
                 </div>
-            )};
+            )}
 
         </div>
-    )};
 
+    )};
 
 
 export default SingleArticlePage;
 
 
-
-
-
-{/* <WriteACommentButton className="WriteACommentButton" pageState={ pageState } setPageState={ setPageState }/> */}
 
 
     
